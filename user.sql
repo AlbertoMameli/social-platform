@@ -10,7 +10,7 @@ SELECT `posts`.`id`,`posts`.`title`
 FROM `posts`
 LEFT JOIN `likes`
 ON `posts`.`id` = `likes`.`post_id`
-WHERE `likes`.`date` IS NULL
+WHERE `likes`.`post_id` IS NULL
 --Conta il numero di like per ogni post (165 nel caso di query con SELECT + JOIN oppure 175 nel caso di query con sola SELECT)
 SELECT `posts`.`id`, `posts`.`title`, COUNT(`likes`.`post_id`) AS `total_likes`
 FROM `likes`
